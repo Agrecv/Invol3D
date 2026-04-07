@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-surface: #0c0e11;
+  --color-surface-container-low: #111417;
+  --color-surface-container: #171a1d;
+  --color-surface-container-high: #1d2024;
+  --color-surface-container-highest: #23262a;
+  --color-surface-container-lowest: #000000;
+  
+  --color-on-surface: #f9f9fd;
+  --color-on-surface-variant: #aaabaf;
+  
+  --color-primary: #00FFC2;
+  --color-primary-container: #00fdc1;
+  --color-on-primary: #004734;
+  
+  --color-tertiary: #74e0ff;
+  --color-tertiary-container: #00d5fe;
+  
+  --color-outline-variant: #46484b;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+.glass-panel {
+  @apply bg-surface-container-highest/60 backdrop-blur-xl;
+}
+
+.technical-grid {
+  background-image: radial-gradient(rgba(0, 255, 194, 0.1) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-primary to-primary-container;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
